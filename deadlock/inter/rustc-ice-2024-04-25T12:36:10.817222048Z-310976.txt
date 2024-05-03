@@ -1,0 +1,87 @@
+thread 'rustc' panicked at checker/src/call_graph.rs:362:23:
+unrecoverable: "Failed to read call graph config: "invalid type: unit variant, expected newtype variant at line 6 column 8""
+stack backtrace:
+   0:     0x7839f7b634ec - std::backtrace_rs::backtrace::libunwind::trace::h90050e2b473a8be8
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/../../backtrace/src/backtrace/libunwind.rs:93:5
+   1:     0x7839f7b634ec - std::backtrace_rs::backtrace::trace_unsynchronized::h315eefa38330dd05
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5
+   2:     0x7839f7b634ec - std::sys_common::backtrace::_print_fmt::he8ad9b46db7504ac
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys_common/backtrace.rs:67:5
+   3:     0x7839f7b634ec - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h954948ab66ed8f7e
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys_common/backtrace.rs:44:22
+   4:     0x7839f7bc8d7c - core::fmt::rt::Argument::fmt::h79ab1fbb465ada24
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/fmt/rt.rs:138:9
+   5:     0x7839f7bc8d7c - core::fmt::write::h382bdcd4de88f623
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/fmt/mod.rs:1094:21
+   6:     0x7839f7b55e8e - std::io::Write::write_fmt::h14d4311fd6c19288
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/io/mod.rs:1714:15
+   7:     0x7839f7b632d4 - std::sys_common::backtrace::_print::h9ddf7c607ae462c3
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys_common/backtrace.rs:47:5
+   8:     0x7839f7b632d4 - std::sys_common::backtrace::print::h687780bc7847bb48
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys_common/backtrace.rs:34:9
+   9:     0x7839f7b663ca - std::panicking::panic_hook_with_disk_dump::{{closure}}::habd77b46636070b9
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/panicking.rs:278:22
+  10:     0x7839f7b66079 - std::panicking::panic_hook_with_disk_dump::h929109630223e2cd
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/panicking.rs:305:9
+  11:     0x7839fad34259 - rustc_driver_impl[b3df34d2be0a01db]::install_ice_hook::{closure#0}
+  12:     0x7839f7b66c70 - <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call::h5f5e9e8508847813
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/boxed.rs:2021:9
+  13:     0x7839f7b66c70 - std::panicking::rust_panic_with_hook::h8892c67389994726
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/panicking.rs:733:13
+  14:     0x7839f7b669f7 - std::panicking::begin_panic_handler::{{closure}}::h23bacf7cf8bf8682
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/panicking.rs:621:13
+  15:     0x7839f7b63a16 - std::sys_common::backtrace::__rust_end_short_backtrace::h5ce1c9c3fc345bc7
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys_common/backtrace.rs:170:18
+  16:     0x7839f7b66742 - rust_begin_unwind
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/panicking.rs:617:5
+  17:     0x7839f7bc5183 - core::panicking::panic_fmt::h003c6209e45cbefe
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/panicking.rs:67:14
+  18:     0x58a0b7afbf12 - mirai::call_graph::CallGraph::parse_config::h1937ef4b5865e1e4
+                               at /home/kevin/HUAWEI/MIRAI/checker/src/call_graph.rs:362:23
+  19:     0x58a0b7afbf12 - mirai::call_graph::CallGraph::new::h49be3aa7ec84e561
+                               at /home/kevin/HUAWEI/MIRAI/checker/src/call_graph.rs:339:27
+  20:     0x58a0b7b08880 - mirai::callbacks::MiraiCallbacks::analyze_with_mirai::{{closure}}::h9b925c79dcd3e355
+                               at /home/kevin/HUAWEI/MIRAI/checker/src/callbacks.rs:170:25
+  21:     0x58a0b7b08880 - mirai::callbacks::MiraiCallbacks::analyze_with_mirai::hc664959a128885e3
+                               at /home/kevin/HUAWEI/MIRAI/checker/src/callbacks.rs:131:5
+  22:     0x58a0b7b07cee - <mirai::callbacks::MiraiCallbacks as rustc_driver_impl::Callbacks>::after_analysis::{{closure}}::{{closure}}::h8fd628938d25a757
+                               at /home/kevin/HUAWEI/MIRAI/checker/src/callbacks.rs:118:26
+  23:     0x58a0b7b07cee - rustc_middle::ty::context::GlobalCtxt::enter::{{closure}}::hca1da1c77fd244e3
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/compiler/rustc_middle/src/ty/context.rs:593:37
+  24:     0x58a0b7b07cee - rustc_middle::ty::context::tls::enter_context::{{closure}}::hdeeabd69518e48ff
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/compiler/rustc_middle/src/ty/context/tls.rs:82:9
+  25:     0x58a0b7b07cee - std::thread::local::LocalKey<T>::try_with::hf6395b262726d152
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/thread/local.rs:270:16
+  26:     0x58a0b7b07cee - std::thread::local::LocalKey<T>::with::h97c9bb2e24f05282
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/thread/local.rs:246:9
+  27:     0x58a0b7b07cee - rustc_middle::ty::context::tls::enter_context::h7aac460c3b28d878
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/compiler/rustc_middle/src/ty/context/tls.rs:79:9
+  28:     0x58a0b7b07cee - rustc_middle::ty::context::GlobalCtxt::enter::h1a8f7a5106aba24d
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/compiler/rustc_middle/src/ty/context.rs:593:9
+  29:     0x58a0b7b07cee - rustc_interface::queries::QueryResult<&rustc_middle::ty::context::GlobalCtxt>::enter::h60cfb0fb81a5d70b
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/compiler/rustc_interface/src/queries.rs:70:9
+  30:     0x58a0b7b07cee - <mirai::callbacks::MiraiCallbacks as rustc_driver_impl::Callbacks>::after_analysis::{{closure}}::hfb590e367f6388da
+                               at /home/kevin/HUAWEI/MIRAI/checker/src/callbacks.rs:115:9
+  31:     0x58a0b7b07cee - <mirai::callbacks::MiraiCallbacks as rustc_driver_impl::Callbacks>::after_analysis::ha7e8f212b405191f
+                               at /home/kevin/HUAWEI/MIRAI/checker/src/callbacks.rs:98:5
+  32:     0x7839fa006449 - rustc_span[2b31a5ee57f32e3]::set_source_map::<core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>, rustc_interface[7773ed95a9548141]::interface::run_compiler<core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>, rustc_driver_impl[b3df34d2be0a01db]::run_compiler::{closure#1}>::{closure#0}::{closure#0}>
+  33:     0x7839fa000410 - std[cbabb6d3f4e09f0]::sys_common::backtrace::__rust_begin_short_backtrace::<rustc_interface[7773ed95a9548141]::util::run_in_thread_pool_with_globals<rustc_interface[7773ed95a9548141]::interface::run_compiler<core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>, rustc_driver_impl[b3df34d2be0a01db]::run_compiler::{closure#1}>::{closure#0}, core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>>
+  34:     0x7839f9fffd75 - <<std[cbabb6d3f4e09f0]::thread::Builder>::spawn_unchecked_<rustc_interface[7773ed95a9548141]::util::run_in_thread_pool_with_globals<rustc_interface[7773ed95a9548141]::interface::run_compiler<core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>, rustc_driver_impl[b3df34d2be0a01db]::run_compiler::{closure#1}>::{closure#0}, core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[c2f81ee72e6ed41b]::result::Result<(), rustc_span[2b31a5ee57f32e3]::ErrorGuaranteed>>::{closure#1} as core[c2f81ee72e6ed41b]::ops::function::FnOnce<()>>::call_once::{shim:vtable#0}
+  35:     0x7839f7b71465 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h07280087dca23ed3
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/boxed.rs:2007:9
+  36:     0x7839f7b71465 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::hc87a9eae3e263645
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/boxed.rs:2007:9
+  37:     0x7839f7b71465 - std::sys::unix::thread::Thread::new::thread_start::h6c1cae377ce05480
+                               at /rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys/unix/thread.rs:108:17
+  38:     0x7839f7297b5a - start_thread
+                               at ./nptl/pthread_create.c:444:8
+  39:     0x7839f73285fc - __GI___clone3
+                               at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+  40:                0x0 - <unknown>
+
+
+rustc version: 1.73.0-nightly (28eb857b9 2023-08-12)
+platform: x86_64-unknown-linux-gnu
+
+query stack during panic:
+end of query stack

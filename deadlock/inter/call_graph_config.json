@@ -1,0 +1,20 @@
+{
+    "call_sites_output_path": "/home/kevin/Motivate/deadlock/inter/call_sites.json",
+    "dot_output_path": "/home/kevin/Motivate/deadlock/inter/graph.dot",
+    "reductions": [
+        {
+            "Slice": "main"
+        },
+        "Fold",
+        "Clean",
+        "Deduplicate"
+    ],
+    "included_crates": [
+        "inter"
+    ],
+    "datalog_config": {
+        "ddlog_output_path": "/home/kevin/Motivate/deadlock/inter/graph.dat",
+        "type_map_output_path": "/home/kevin/Motivate/deadlock/inter/types.json",
+        "datalog_backend": "DifferentialDatalog"
+    }
+}

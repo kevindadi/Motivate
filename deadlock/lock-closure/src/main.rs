@@ -1,7 +1,7 @@
 use std::sync::{Arc, Mutex};
 use std::thread;
 
-fn one_closure_one_caller() {
+pub fn one_closure_one_caller() {
     let lock_a1 = Arc::new(Mutex::new(1));
     let lock_a2 = lock_a1.clone();
     let lock_b1 = Arc::new(Mutex::new(true));
@@ -17,7 +17,7 @@ fn one_closure_one_caller() {
     th.join().unwrap();
 }
 
-fn two_closures() {
+pub fn two_closures() {
     let lock_a1 = Arc::new(Mutex::new(1));
     let lock_a2 = lock_a1.clone();
     let lock_b1 = Arc::new(Mutex::new(true));
@@ -34,7 +34,7 @@ fn two_closures() {
     th2.join().unwrap();
 }
 
-fn main() {
+pub fn main() {
     one_closure_one_caller();
     two_closures();
 }

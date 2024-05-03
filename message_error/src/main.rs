@@ -2,7 +2,7 @@ use tokio::sync::mpsc;
 
 #[tokio::main]
 async fn main() {
-    let (mut tx, mut rx) = mpsc::channel::<i32>(10);
+    let (tx, mut rx) = mpsc::channel::<i32>(10);
 
     let producer = tokio::spawn(async move {
         for i in 1..=3 {

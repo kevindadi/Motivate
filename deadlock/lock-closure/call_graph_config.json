@@ -1,0 +1,20 @@
+{
+    "call_sites_output_path": "/home/kevin/Motivate/deadlock/lock-closure/call_sites.json",
+    "dot_output_path": "/home/kevin/Motivate/deadlock/lock-closure/graph.dot",
+    "reductions": [
+        {
+            "Slice": "main"
+        },
+        "Fold",
+        "Clean",
+        "Deduplicate"
+    ],
+    "included_crates": [
+        "lock-closure"
+    ],
+    "datalog_config": {
+        "ddlog_output_path": "/home/kevin/Motivate/deadlock/lock-closure/graph.dat",
+        "type_map_output_path": "/home/kevin/Motivate/deadlock/lock-closure/types.json",
+        "datalog_backend": "DifferentialDatalog"
+    }
+}

@@ -1,0 +1,1505 @@
+{
+  "files": [
+    "src/main.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/sync.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sync/mutex.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/result.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/thread/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sync/poison.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/convert/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/string.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/option.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys_common/thread.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/boxed.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/io/stdio.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/thread/scoped.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys/unix/thread.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/ptr/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/intrinsics.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/alloc.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/alloc/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys/unix/locks/futex_mutex.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/cell.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/pin.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/sync/atomic.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/panicking.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/alloc/src/ffi/c_str.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys/unix/stdio.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/io/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/fmt/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/sys/unix/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/std/src/panic.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/slice/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/ptr/metadata.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/mem/mod.rs",
+    "/rustc/28eb857b9504bd05bbed0cf8af8e825fbdbb1fa1/library/core/src/slice/memchr.rs"
+  ],
+  "callables": [
+    {
+      "name": "/lock_closure/one_closure_one_caller()->()",
+      "file_index": 0,
+      "first_line": 4,
+      "local": true
+    },
+    {
+      "name": "/alloc/std::sync::Arc::<T>::new(T)->std::sync::Arc<T>",
+      "file_index": 1,
+      "first_line": 386,
+      "local": true
+    },
+    {
+      "name": "/std/std::sync::Mutex::<T>::new(T)->std::sync::Mutex<T>",
+      "file_index": 2,
+      "first_line": 229,
+      "local": true
+    },
+    {
+      "name": "/alloc/<std::sync::Arc<T, A> as std::clone::Clone>::clone(&std::sync::Arc<T, A>)->std::sync::Arc<T, A>",
+      "file_index": 1,
+      "first_line": 2010,
+      "local": true
+    },
+    {
+      "name": "/std/std::sync::Mutex::<T>::lock(&std::sync::Mutex<T>)->std::result::Result<std::sync::MutexGuard<'_, T>, std::sync::PoisonError<std::sync::MutexGuard<'_, T>>>",
+      "file_index": 2,
+      "first_line": 271,
+      "local": true
+    },
+    {
+      "name": "/core/std::result::Result::<T, E>::unwrap(std::result::Result<T, E>)->T",
+      "file_index": 3,
+      "first_line": 1071,
+      "local": true
+    },
+    {
+      "name": "/std/<std::sync::MutexGuard<'_, T> as std::ops::Drop>::drop(&mut std::sync::MutexGuard<'_, T>)->()",
+      "file_index": 2,
+      "first_line": 526,
+      "local": true
+    },
+    {
+      "name": "/std/std::thread::spawn(F)->std::thread::JoinHandle<T>",
+      "file_index": 4,
+      "first_line": 680,
+      "local": true
+    },
+    {
+      "name": "/std/std::thread::JoinHandle::<T>::join(std::thread::JoinHandle<T>)->std::result::Result<T, std::boxed::Box<(dyn std::any::Any + std::marker::Send + 'static)>>",
+      "file_index": 4,
+      "first_line": 1570,
+      "local": true
+    },
+    {
+      "name": "/alloc/<std::sync::Arc<T, A> as std::ops::Drop>::drop(&mut std::sync::Arc<T, A>)->()",
+      "file_index": 1,
+      "first_line": 2368,
+      "local": true
+    },
+    {
+      "name": "/lock_closure/two_closures()->()",
+      "file_index": 0,
+      "first_line": 20,
+      "local": true
+    },
+    {
+      "name": "/lock_closure/main()->()",
+      "file_index": 0,
+      "first_line": 37,
+      "local": true
+    },
+    {
+      "name": "/std/std::sync::poison::map_result(std::result::Result<T, std::sync::PoisonError<T>>,F)->std::result::Result<U, std::sync::PoisonError<U>>",
+      "file_index": 5,
+      "first_line": 264,
+      "local": true
+    },
+    {
+      "name": "/std/std::sync::MutexGuard::<'mutex, T>::new::{closure#0}((std::sync::poison::Guard,))->std::sync::MutexGuard<'_, T>",
+      "file_index": 2,
+      "first_line": 503,
+      "local": true
+    },
+    {
+      "name": "/core/<T as std::convert::Into<U>>::into(T)->U",
+      "file_index": 6,
+      "first_line": 715,
+      "local": true
+    },
+    {
+      "name": "/alloc/std::string::<impl std::convert::From<std::string::String> for std::vec::Vec<u8>>::from(std::string::String)->std::vec::Vec<u8>",
+      "file_index": 7,
+      "first_line": 2808,
+      "local": false
+    },
+    {
+      "name": "/std/std::thread::Builder::spawn_unchecked_(std::thread::Builder,F,std::option::Option<std::sync::Arc<std::thread::scoped::ScopeData>>)->std::result::Result<std::thread::JoinInner<'scope, T>, std::io::Error>",
+      "file_index": 4,
+      "first_line": 460,
+      "local": true
+    },
+    {
+      "name": "/std/std::sys_common::thread::min_stack()->usize",
+      "file_index": 9,
+      "first_line": 5,
+      "local": false
+    },
+    {
+      "name": "/core/std::result::Result::<T, E>::expect(std::result::Result<T, E>,&str)->T",
+      "file_index": 3,
+      "first_line": 1028,
+      "local": true
+    },
+    {
+      "name": "/core/std::result::unwrap_failed(&str,&dyn std::fmt::Debug)->!",
+      "file_index": 3,
+      "first_line": 1651,
+      "local": false
+    },
+    {
+      "name": "/alloc/<std::boxed::Box<T, A> as std::ops::Drop>::drop(&mut std::boxed::Box<T, A>)->()",
+      "file_index": 10,
+      "first_line": 1227,
+      "local": true
+    },
+    {
+      "name": "/std/std::thread::Builder::spawn_unchecked(std::thread::Builder,F)->std::result::Result<std::thread::JoinHandle<T>, std::io::Error>",
+      "file_index": 4,
+      "first_line": 451,
+      "local": true
+    },
+    {
+      "name": "/std/std::thread::Thread::new(std::option::Option<std::ffi::CString>)->std::thread::Thread",
+      "file_index": 4,
+      "first_line": 1197,
+      "local": false
+    },
+    {
+      "name": "/std/std::io::set_output_capture(std::option::Option<std::sync::Arc<std::sync::Mutex<std::vec::Vec<u8>>>>)->std::option::Option<std::sync::Arc<std::sync::Mutex<std::vec::Vec<u8>>>>",
+      "file_index": 11,
+      "first_line": 987,
+      "local": false
+    },
+    {
+      "name": "/std/std::thread::scoped::ScopeData::increment_num_running_threads(&std::thread::scoped::ScopeData)->()",
+      "file_index": 12,
+      "first_line": 45,
+      "local": false
+    },
+    {
+      "name": "/std/std::sys::unix::thread::Thread::new(usize,std::boxed::Box<(dyn std::ops::FnOnce() + 'static)>)->std::result::Result<std::sys::unix::thread::Thread, std::io::Error>",
+      "file_index": 13,
+      "first_line": 51,
+      "local": false
+    },
+    {
+      "name": "/alloc/std::boxed::Box::<T>::new(T)->std::boxed::Box<T>",
+      "file_index": 10,
+      "first_line": 215,
+      "local": true
+    },
+    {
+      "name": "/std/std::thread::Builder::new()->std::thread::Builder",
+      "file_index": 4,
+      "first_line": 290,
+      "local": false
+    },
+    {
+      "name": "/std/<std::thread::Packet<'scope, T> as std::ops::Drop>::drop(&mut std::thread::Packet<'scope, T>)->()",
+      "file_index": 4,
+      "first_line": 1398,
+      "local": true
+    },
+    {
+      "name": "/std/std::thread::scoped::ScopeData::decrement_num_running_threads(&std::thread::scoped::ScopeData,bool)->()",
+      "file_index": 12,
+      "first_line": 54,
+      "local": false
+    },
+    {
+      "name": "/std/std::thread::JoinInner::<'scope, T>::join(std::thread::JoinInner<'scope, T>)->std::result::Result<T, std::boxed::Box<(dyn std::any::Any + std::marker::Send + 'static)>>",
+      "file_index": 4,
+      "first_line": 1437,
+      "local": true
+    },
+    {
+      "name": "/std/std::sys::unix::thread::Thread::join(std::sys::unix::thread::Thread)->()",
+      "file_index": 13,
+      "first_line": 261,
+      "local": false
+    },
+    {
+      "name": "/alloc/std::sync::Arc::<T, A>::drop_slow(&mut std::sync::Arc<T, A>)->()",
+      "file_index": 1,
+      "first_line": 1748,
+      "local": true
+    },
+    {
+      "name": "/core/std::ptr::drop_in_place(*mut T)->()",
+      "file_index": 14,
+      "first_line": 497,
+      "local": true
+    },
+    {
+      "name": "/core/std::intrinsics::abort()->!",
+      "file_index": 15,
+      "first_line": 919,
+      "local": false
+    },
+    {
+      "name": "/alloc/<std::alloc::Global as std::clone::Clone>::clone(&std::alloc::Global)->std::alloc::Global",
+      "file_index": 16,
+      "first_line": 51,
+      "local": false
+    },
+    {
+      "name": "/alloc/std::sync::Arc::<T, A>::is_unique(&mut std::sync::Arc<T, A>)->bool",
+      "file_index": 1,
+      "first_line": 2315,
+      "local": true
+    },
+    {
+      "name": "/alloc/<std::sync::Weak<T, A> as std::ops::Drop>::drop(&mut std::sync::Weak<T, A>)->()",
+      "file_index": 1,
+      "first_line": 2989,
+      "local": true
+    },
+    {
+      "name": "/core/<&A as std::alloc::Allocator>::deallocate(&&A,std::ptr::NonNull<u8>,std::alloc::Layout)->()",
+      "file_index": 17,
+      "first_line": 384,
+      "local": true
+    },
+    {
+      "name": "/std/std::sys::unix::locks::futex_mutex::Mutex::new()->std::sys::unix::locks::futex_mutex::Mutex",
+      "file_index": 18,
+      "first_line": 16,
+      "local": false
+    },
+    {
+      "name": "/std/std::sync::poison::Flag::new()->std::sync::poison::Flag",
+      "file_index": 5,
+      "first_line": 23,
+      "local": false
+    },
+    {
+      "name": "/core/std::cell::UnsafeCell::<T>::new(T)->std::cell::UnsafeCell<T>",
+      "file_index": 19,
+      "first_line": 2010,
+      "local": true
+    },
+    {
+      "name": "/std/std::sync::MutexGuard::<'mutex, T>::new(&'mutex std::sync::Mutex<T>)->std::result::Result<std::sync::MutexGuard<'mutex, T>, std::sync::PoisonError<std::sync::MutexGuard<'mutex, T>>>",
+      "file_index": 2,
+      "first_line": 502,
+      "local": true
+    },
+    {
+      "name": "/std/std::sync::poison::Flag::guard(&std::sync::poison::Flag)->std::result::Result<std::sync::poison::Guard, std::sync::PoisonError<std::sync::poison::Guard>>",
+      "file_index": 5,
+      "first_line": 35,
+      "local": false
+    },
+    {
+      "name": "/std/std::sync::poison::Flag::done(&std::sync::poison::Flag,&std::sync::poison::Guard)->()",
+      "file_index": 5,
+      "first_line": 41,
+      "local": false
+    },
+    {
+      "name": "/alloc/std::alloc::Global::alloc_impl(&std::alloc::Global,std::alloc::Layout,bool)->std::result::Result<std::ptr::NonNull<[u8]>, std::alloc::AllocError>",
+      "file_index": 16,
+      "first_line": 176,
+      "local": true
+    },
+    {
+      "name": "/core/std::intrinsics::volatile_load(*const T)->T",
+      "file_index": 15,
+      "first_line": 1497,
+      "local": false
+    },
+    {
+      "name": "/alloc/alloc::alloc::exchange_malloc(usize,usize)->*mut u8",
+      "file_index": 16,
+      "first_line": 328,
+      "local": false
+    },
+    {
+      "name": "/alloc/<std::alloc::Global as std::alloc::Allocator>::deallocate(&std::alloc::Global,std::ptr::NonNull<u8>,std::alloc::Layout)->()",
+      "file_index": 16,
+      "first_line": 250,
+      "local": false
+    },
+    {
+      "name": "/core/std::sync::atomic::AtomicBool::new(bool)->std::sync::atomic::AtomicBool",
+      "file_index": 21,
+      "first_line": 313,
+      "local": true
+    },
+    {
+      "name": "/core/std::sync::atomic::AtomicU32::new(u32)->std::sync::atomic::AtomicU32",
+      "file_index": 21,
+      "first_line": 2075,
+      "local": true
+    },
+    {
+      "name": "/core/std::sync::atomic::atomic_load(*const T,std::sync::atomic::Ordering)->T",
+      "file_index": 21,
+      "first_line": 3180,
+      "local": true
+    },
+    {
+      "name": "/std/std::panicking::panicking()->bool",
+      "file_index": 22,
+      "first_line": 558,
+      "local": true
+    },
+    {
+      "name": "/core/std::sync::atomic::atomic_store(*mut T,T,std::sync::atomic::Ordering)->()",
+      "file_index": 21,
+      "first_line": 3165,
+      "local": true
+    },
+    {
+      "name": "/core/std::sync::atomic::atomic_compare_exchange(*mut T,T,T,std::sync::atomic::Ordering,std::sync::atomic::Ordering)->std::result::Result<T, T>",
+      "file_index": 21,
+      "first_line": 3246,
+      "local": true
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_store_relaxed(*mut T,T)->()",
+      "file_index": 15,
+      "first_line": 367,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_store_release(*mut T,T)->()",
+      "file_index": 15,
+      "first_line": 360,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_store_seqcst(*mut T,T)->()",
+      "file_index": 15,
+      "first_line": 353,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_load_relaxed(*const T)->T",
+      "file_index": 15,
+      "first_line": 343,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_load_acquire(*const T)->T",
+      "file_index": 15,
+      "first_line": 336,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_load_seqcst(*const T)->T",
+      "file_index": 15,
+      "first_line": 329,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_xchg_release(*mut T,T)->T",
+      "file_index": 15,
+      "first_line": 391,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_xadd_relaxed(*mut T,T)->T",
+      "file_index": 15,
+      "first_line": 441,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_xsub_release(*mut T,T)->T",
+      "file_index": 15,
+      "first_line": 463,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_relaxed_relaxed(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 88,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_relaxed_acquire(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 96,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_relaxed_seqcst(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 104,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_acquire_relaxed(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 112,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_acquire_acquire(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 120,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_acquire_seqcst(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 128,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_release_relaxed(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 136,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_release_acquire(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 144,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_release_seqcst(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 152,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_acqrel_relaxed(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 160,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_acqrel_acquire(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 168,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_acqrel_seqcst(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 176,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_seqcst_relaxed(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 184,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_seqcst_acquire(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 192,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_cxchg_seqcst_seqcst(*mut T,T,T)->(T, bool)",
+      "file_index": 15,
+      "first_line": 200,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::atomic_fence_acquire()->()",
+      "file_index": 15,
+      "first_line": 779,
+      "local": false
+    },
+    {
+      "name": "/std/std::sys::unix::locks::futex_mutex::Mutex::lock_contended(&std::sys::unix::locks::futex_mutex::Mutex)->()",
+      "file_index": 18,
+      "first_line": 33,
+      "local": false
+    },
+    {
+      "name": "/std/std::sys::unix::locks::futex_mutex::Mutex::wake(&std::sys::unix::locks::futex_mutex::Mutex)->()",
+      "file_index": 18,
+      "first_line": 93,
+      "local": false
+    },
+    {
+      "name": "/alloc/<T as std::ffi::CString::new::SpecNewImpl>::spec_new_impl(T)->std::result::Result<std::ffi::CString, std::ffi::NulError>",
+      "file_index": 23,
+      "first_line": 267,
+      "local": true
+    },
+    {
+      "name": "/alloc/std::ffi::CString::_from_vec_unchecked(std::vec::Vec<u8>)->std::ffi::CString",
+      "file_index": 23,
+      "first_line": 345,
+      "local": false
+    },
+    {
+      "name": "/std/std::sys::unix::stdio::panic_output()->std::option::Option<impl std::io::Write>",
+      "file_index": 24,
+      "first_line": 97,
+      "local": false
+    },
+    {
+      "name": "/std/std::io::Write::write_fmt(&mut Self,std::fmt::Arguments<'_>)->std::result::Result<(), std::io::Error>",
+      "file_index": 25,
+      "first_line": 1693,
+      "local": true
+    },
+    {
+      "name": "/core/std::fmt::Arguments::<'a>::new_v1(&'a [&'static str],&'a [core::fmt::rt::Argument<'a>])->std::fmt::Arguments<'a>",
+      "file_index": 26,
+      "first_line": 307,
+      "local": false
+    },
+    {
+      "name": "/std/std::sys::unix::abort_internal()->!",
+      "file_index": 27,
+      "first_line": 364,
+      "local": false
+    },
+    {
+      "name": "/core/std::fmt::write(&mut dyn std::fmt::Write,std::fmt::Arguments<'_>)->std::result::Result<(), std::fmt::Error>",
+      "file_index": 26,
+      "first_line": 1080,
+      "local": false
+    },
+    {
+      "name": "/std/std::panicking::r#try(F)->std::result::Result<R, std::boxed::Box<(dyn std::any::Any + std::marker::Send + 'static)>>",
+      "file_index": 22,
+      "first_line": 444,
+      "local": true
+    },
+    {
+      "name": "/core/core::slice::<impl [T]>::len(&[T])->usize",
+      "file_index": 29,
+      "first_line": 141,
+      "local": true
+    },
+    {
+      "name": "/core/std::ptr::metadata(*const T)-><T as std::ptr::Pointee>::Metadata",
+      "file_index": 30,
+      "first_line": 94,
+      "local": true
+    },
+    {
+      "name": "/core/std::fmt::Arguments::<'a>::new_const(&'a [&'static str])->std::fmt::Arguments<'a>",
+      "file_index": 26,
+      "first_line": 297,
+      "local": false
+    },
+    {
+      "name": "/std/std::rt::panic_count::is_zero_slow_path()->bool",
+      "file_index": 22,
+      "first_line": 435,
+      "local": false
+    },
+    {
+      "name": "/core/std::intrinsics::r#try(fn(*mut u8),*mut u8,fn(*mut u8, *mut u8))->i32",
+      "file_index": 15,
+      "first_line": 2306,
+      "local": false
+    },
+    {
+      "name": "/core/core::slice::memchr::memchr_naive(u8,&[u8])->std::option::Option<usize>",
+      "file_index": 32,
+      "first_line": 52,
+      "local": false
+    },
+    {
+      "name": "/core/core::slice::memchr::memchr_aligned(u8,&[u8])->std::option::Option<usize>",
+      "file_index": 32,
+      "first_line": 71,
+      "local": false
+    }
+  ],
+  "calls": [
+    [
+      0,
+      5,
+      19,
+      0,
+      1
+    ],
+    [
+      0,
+      5,
+      28,
+      0,
+      2
+    ],
+    [
+      0,
+      6,
+      19,
+      0,
+      3
+    ],
+    [
+      0,
+      7,
+      19,
+      0,
+      1
+    ],
+    [
+      0,
+      7,
+      28,
+      0,
+      2
+    ],
+    [
+      0,
+      8,
+      19,
+      0,
+      3
+    ],
+    [
+      0,
+      10,
+      18,
+      0,
+      4
+    ],
+    [
+      0,
+      10,
+      18,
+      0,
+      5
+    ],
+    [
+      0,
+      11,
+      18,
+      0,
+      4
+    ],
+    [
+      0,
+      11,
+      18,
+      0,
+      5
+    ],
+    [
+      0,
+      12,
+      5,
+      0,
+      6
+    ],
+    [
+      0,
+      13,
+      14,
+      0,
+      7
+    ],
+    [
+      0,
+      17,
+      5,
+      0,
+      8
+    ],
+    [
+      0,
+      17,
+      5,
+      0,
+      5
+    ],
+    [
+      0,
+      18,
+      1,
+      0,
+      9
+    ],
+    [
+      0,
+      21,
+      19,
+      10,
+      1
+    ],
+    [
+      0,
+      21,
+      28,
+      10,
+      2
+    ],
+    [
+      0,
+      22,
+      19,
+      10,
+      3
+    ],
+    [
+      0,
+      23,
+      19,
+      10,
+      1
+    ],
+    [
+      0,
+      23,
+      28,
+      10,
+      2
+    ],
+    [
+      0,
+      24,
+      19,
+      10,
+      3
+    ],
+    [
+      0,
+      25,
+      15,
+      10,
+      7
+    ],
+    [
+      0,
+      29,
+      15,
+      10,
+      7
+    ],
+    [
+      0,
+      33,
+      5,
+      10,
+      8
+    ],
+    [
+      0,
+      33,
+      5,
+      10,
+      5
+    ],
+    [
+      0,
+      34,
+      5,
+      10,
+      8
+    ],
+    [
+      0,
+      34,
+      5,
+      10,
+      5
+    ],
+    [
+      0,
+      35,
+      1,
+      10,
+      9
+    ],
+    [
+      0,
+      38,
+      5,
+      11,
+      0
+    ],
+    [
+      0,
+      39,
+      5,
+      11,
+      10
+    ],
+    [
+      5,
+      269,
+      21,
+      12,
+      13
+    ],
+    [
+      5,
+      270,
+      60,
+      12,
+      13
+    ],
+    [
+      6,
+      716,
+      9,
+      14,
+      15
+    ],
+    [
+      8,
+      979,
+      21,
+      16,
+      17
+    ],
+    [
+      8,
+      2003,
+      29,
+      16,
+      3
+    ],
+    [
+      3,
+      1034,
+      23,
+      18,
+      19
+    ],
+    [
+      3,
+      1077,
+      23,
+      5,
+      19
+    ],
+    [
+      3,
+      1077,
+      86,
+      5,
+      20
+    ],
+    [
+      4,
+      389,
+      18,
+      7,
+      21
+    ],
+    [
+      4,
+      457,
+      32,
+      21,
+      16
+    ],
+    [
+      4,
+      475,
+      25,
+      16,
+      22
+    ],
+    [
+      4,
+      476,
+      13,
+      16,
+      18
+    ],
+    [
+      4,
+      480,
+      49,
+      16,
+      1
+    ],
+    [
+      4,
+      485,
+      28,
+      16,
+      3
+    ],
+    [
+      4,
+      487,
+      30,
+      16,
+      23
+    ],
+    [
+      4,
+      488,
+      9,
+      16,
+      23
+    ],
+    [
+      4,
+      545,
+      13,
+      16,
+      24
+    ],
+    [
+      4,
+      563,
+      17,
+      16,
+      25
+    ],
+    [
+      4,
+      566,
+      25,
+      16,
+      26
+    ],
+    [
+      4,
+      573,
+      5,
+      16,
+      9
+    ],
+    [
+      4,
+      686,
+      5,
+      7,
+      27
+    ],
+    [
+      4,
+      686,
+      5,
+      7,
+      18
+    ],
+    [
+      4,
+      1424,
+      13,
+      28,
+      29
+    ],
+    [
+      4,
+      1438,
+      9,
+      30,
+      31
+    ],
+    [
+      4,
+      1440,
+      5,
+      30,
+      9
+    ],
+    [
+      4,
+      1571,
+      9,
+      8,
+      30
+    ],
+    [
+      1,
+      389,
+      25,
+      1,
+      26
+    ],
+    [
+      1,
+      395,
+      5,
+      1,
+      28
+    ],
+    [
+      1,
+      1751,
+      18,
+      32,
+      33
+    ],
+    [
+      1,
+      2040,
+      13,
+      3,
+      34
+    ],
+    [
+      1,
+      2043,
+      48,
+      3,
+      35
+    ],
+    [
+      1,
+      2231,
+      12,
+      30,
+      36
+    ],
+    [
+      1,
+      2407,
+      13,
+      9,
+      32
+    ],
+    [
+      1,
+      3003,
+      17,
+      37,
+      38
+    ],
+    [
+      2,
+      230,
+      24,
+      2,
+      39
+    ],
+    [
+      2,
+      230,
+      51,
+      2,
+      40
+    ],
+    [
+      2,
+      230,
+      78,
+      2,
+      41
+    ],
+    [
+      2,
+      274,
+      13,
+      4,
+      42
+    ],
+    [
+      2,
+      503,
+      9,
+      42,
+      12
+    ],
+    [
+      2,
+      503,
+      28,
+      42,
+      43
+    ],
+    [
+      2,
+      528,
+      13,
+      6,
+      44
+    ],
+    [
+      14,
+      1544,
+      9,
+      45,
+      46
+    ],
+    [
+      10,
+      217,
+      9,
+      26,
+      47
+    ],
+    [
+      10,
+      1235,
+      17,
+      20,
+      48
+    ],
+    [
+      20,
+      409,
+      16,
+      16,
+      3
+    ],
+    [
+      21,
+      314,
+      25,
+      49,
+      41
+    ],
+    [
+      21,
+      2992,
+      1,
+      50,
+      41
+    ],
+    [
+      21,
+      3145,
+      1,
+      36,
+      51
+    ],
+    [
+      21,
+      3145,
+      1,
+      52,
+      51
+    ],
+    [
+      21,
+      3145,
+      1,
+      36,
+      53
+    ],
+    [
+      21,
+      3145,
+      1,
+      36,
+      54
+    ],
+    [
+      21,
+      2992,
+      1,
+      4,
+      54
+    ],
+    [
+      21,
+      3169,
+      24,
+      53,
+      55
+    ],
+    [
+      21,
+      3170,
+      24,
+      53,
+      56
+    ],
+    [
+      21,
+      3171,
+      23,
+      53,
+      57
+    ],
+    [
+      21,
+      3184,
+      24,
+      51,
+      58
+    ],
+    [
+      21,
+      3185,
+      24,
+      51,
+      59
+    ],
+    [
+      21,
+      3186,
+      23,
+      51,
+      60
+    ],
+    [
+      21,
+      3202,
+      24,
+      6,
+      61
+    ],
+    [
+      21,
+      3217,
+      24,
+      3,
+      62
+    ],
+    [
+      21,
+      3236,
+      24,
+      9,
+      63
+    ],
+    [
+      21,
+      3256,
+      35,
+      54,
+      64
+    ],
+    [
+      21,
+      3257,
+      35,
+      54,
+      65
+    ],
+    [
+      21,
+      3258,
+      34,
+      54,
+      66
+    ],
+    [
+      21,
+      3259,
+      35,
+      54,
+      67
+    ],
+    [
+      21,
+      3260,
+      35,
+      54,
+      68
+    ],
+    [
+      21,
+      3261,
+      34,
+      54,
+      69
+    ],
+    [
+      21,
+      3262,
+      35,
+      54,
+      70
+    ],
+    [
+      21,
+      3263,
+      35,
+      54,
+      71
+    ],
+    [
+      21,
+      3264,
+      34,
+      54,
+      72
+    ],
+    [
+      21,
+      3265,
+      34,
+      54,
+      73
+    ],
+    [
+      21,
+      3266,
+      34,
+      54,
+      74
+    ],
+    [
+      21,
+      3267,
+      33,
+      54,
+      75
+    ],
+    [
+      21,
+      3268,
+      34,
+      54,
+      76
+    ],
+    [
+      21,
+      3269,
+      34,
+      54,
+      77
+    ],
+    [
+      21,
+      3270,
+      33,
+      54,
+      78
+    ],
+    [
+      21,
+      3527,
+      24,
+      9,
+      79
+    ],
+    [
+      18,
+      28,
+      13,
+      4,
+      80
+    ],
+    [
+      18,
+      88,
+      13,
+      6,
+      81
+    ],
+    [
+      23,
+      268,
+      38,
+      82,
+      14
+    ],
+    [
+      23,
+      271,
+      41,
+      82,
+      83
+    ],
+    [
+      23,
+      316,
+      9,
+      16,
+      82
+    ],
+    [
+      4,
+      1416,
+      13,
+      28,
+      84
+    ],
+    [
+      4,
+      1416,
+      13,
+      28,
+      85
+    ],
+    [
+      4,
+      1416,
+      13,
+      28,
+      86
+    ],
+    [
+      4,
+      1416,
+      13,
+      28,
+      87
+    ],
+    [
+      25,
+      1714,
+      15,
+      85,
+      88
+    ],
+    [
+      28,
+      142,
+      14,
+      28,
+      89
+    ],
+    [
+      29,
+      142,
+      9,
+      90,
+      91
+    ],
+    [
+      17,
+      386,
+      18,
+      38,
+      48
+    ],
+    [
+      31,
+      987,
+      24,
+      32,
+      37
+    ],
+    [
+      26,
+      299,
+      13,
+      53,
+      92
+    ],
+    [
+      22,
+      427,
+      13,
+      52,
+      93
+    ],
+    [
+      22,
+      488,
+      19,
+      89,
+      94
+    ],
+    [
+      32,
+      44,
+      16,
+      82,
+      95
+    ],
+    [
+      32,
+      47,
+      5,
+      82,
+      96
+    ]
+  ]
+}

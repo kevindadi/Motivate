@@ -1,0 +1,202 @@
+   Compiling nomicon v0.1.0 (/home/kevin/Motivate/data_race/nomicon)
+warning: unnecessary `unsafe` block
+  --> src/main.rs:20:9
+   |
+20 |         unsafe {
+   |         ^^^^^^ unnecessary `unsafe` block
+   |
+   = note: `#[warn(unused_unsafe)]` on by default
+
+warning: `nomicon` (bin "nomicon") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.15s
+     Running `target/debug/nomicon`
+==================
+WARNING: ThreadSanitizer: data race (pid=910592)
+  Write of size 8 at 0x720800000020 by main thread:
+    #0 free /rustc/llvm/src/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:725:3 (nomicon+0x1457f) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 alloc::alloc::dealloc::h01b24c671c5c9444 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/alloc.rs:119:14 (nomicon+0x9afd9) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #2 _$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$::deallocate::h271b93a389a60ec2 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/alloc.rs:256:22 (nomicon+0x9afd9)
+    #3 _$LT$$RF$A$u20$as$u20$core..alloc..Allocator$GT$::deallocate::h92ee559ef57f4a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/alloc/mod.rs:392:18 (nomicon+0x9a8da) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 _$LT$alloc..sync..Weak$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::h155c71ed508725e7 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:3061:17 (nomicon+0x9ee3b) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #5 core::ptr::drop_in_place$LT$alloc..sync..Weak$LT$core..sync..atomic..AtomicUsize$C$$RF$alloc..alloc..Global$GT$$GT$::he37377705e559aeb /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9cd31) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 core::mem::drop::h6f02c15cb976f748 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/mem/mod.rs:938:24 (nomicon+0x952b6) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 alloc::sync::Arc$LT$T$C$A$GT$::drop_slow::he0810475c8bd9ae6 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:1818:9 (nomicon+0x952b6)
+    #8 _$LT$alloc..sync..Arc$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::hdf0eaa19b7d672e9 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:2470:13 (nomicon+0x9e678) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 core::ptr::drop_in_place$LT$alloc..sync..Arc$LT$core..sync..atomic..AtomicUsize$GT$$GT$::hf3b81599f7666d28 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9db81) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 nomicon::main::hd3e97f90376a6b7f /home/kevin/Motivate/data_race/nomicon/src/main.rs:27:1 (nomicon+0x9a444) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #11 core::ops::function::FnOnce::call_once::h77ad58e13445247a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9cb5e) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #12 std::sys_common::backtrace::__rust_begin_short_backtrace::hbab9bcc774be4474 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys_common/backtrace.rs:155:18 (nomicon+0x94c11) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #13 std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h7596f0c85e197226 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:159:18 (nomicon+0x9b0fe) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #14 core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h4820802dafd94845 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:284:13 (nomicon+0xb6105) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #15 std::panicking::try::do_call::h3fce6c071ca0f5dd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #16 std::panicking::try::h390f3ffdd179ec2a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #17 std::panic::catch_unwind::hf8a28ad0dfa7600d /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #18 std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::h0a91432573760c91 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:48 (nomicon+0xb6105)
+    #19 std::panicking::try::do_call::h9adaab8f20fa7c09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #20 std::panicking::try::h7b7be5be4ba7198c /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #21 std::panic::catch_unwind::h44f9cbb768dc1a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #22 std::rt::lang_start_internal::hb6ce0964dafca588 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:20 (nomicon+0xb6105)
+    #23 main <null> (nomicon+0x9a619) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+
+  Previous atomic write of size 8 at 0x720800000020 by thread T1:
+    #0 core::sync::atomic::atomic_sub::h9df7830099a98fc4 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/sync/atomic.rs:3353:24 (nomicon+0x9e657) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 core::sync::atomic::AtomicUsize::fetch_sub::h8c245fff8dc1c824 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/sync/atomic.rs:2691:26 (nomicon+0x9e657)
+    #2 _$LT$alloc..sync..Arc$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::hdf0eaa19b7d672e9 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:2435:32 (nomicon+0x9e657)
+    #3 core::ptr::drop_in_place$LT$alloc..sync..Arc$LT$core..sync..atomic..AtomicUsize$GT$$GT$::hf3b81599f7666d28 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9db81) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 core::ptr::drop_in_place$LT$nomicon..main..$u7b$$u7b$closure$u7d$$u7d$$GT$::h368db91461b077ea /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9d9e1) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #5 nomicon::main::_$u7b$$u7b$closure$u7d$$u7d$::he60fc4065dbe1928 /home/kevin/Motivate/data_race/nomicon/src/main.rs:16:5 (nomicon+0xa01bd) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 std::sys_common::backtrace::__rust_begin_short_backtrace::hf32ca6832c82f020 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys_common/backtrace.rs:155:18 (nomicon+0x94c61) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 std::thread::Builder::spawn_unchecked_::_$u7b$$u7b$closure$u7d$$u7d$::_$u7b$$u7b$closure$u7d$$u7d$::h969055a98b1d5c66 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:542:17 (nomicon+0x99d41) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #8 _$LT$core..panic..unwind_safe..AssertUnwindSafe$LT$F$GT$$u20$as$u20$core..ops..function..FnOnce$LT$$LP$$RP$$GT$$GT$::call_once::h451e35136a29647b /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/panic/unwind_safe.rs:272:9 (nomicon+0x957b1) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 std::panicking::try::do_call::hf134b01d9c003b80 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0x96802) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 __rust_try 2u82588ked69iw7f (nomicon+0x969d8) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #11 std::panicking::try::h922d2ce90aeb6477 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0x965b7) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #12 std::panic::catch_unwind::h53566fa1457d010c /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0x99b52) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #13 std::thread::Builder::spawn_unchecked_::_$u7b$$u7b$closure$u7d$$u7d$::hcc13abd5b1107935 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:541:30 (nomicon+0x99b52)
+    #14 core::ops::function::FnOnce::call_once$u7b$$u7b$vtable.shim$u7d$$u7d$::hb3fb58a0746f0416 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9ca21) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #15 _$LT$alloc..boxed..Box$LT$F$C$A$GT$$u20$as$u20$core..ops..function..FnOnce$LT$Args$GT$$GT$::call_once::h05039e3fe13f09f8 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/boxed.rs:2022:9 (nomicon+0xbdf4a) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #16 _$LT$alloc..boxed..Box$LT$F$C$A$GT$$u20$as$u20$core..ops..function..FnOnce$LT$Args$GT$$GT$::call_once::h648dbe3bd9a6e325 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/boxed.rs:2022:9 (nomicon+0xbdf4a)
+    #17 std::sys::pal::unix::thread::Thread::new::thread_start::h0f2cf0460e125837 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys/pal/unix/thread.rs:108:17 (nomicon+0xbdf4a)
+
+  Thread T1 (tid=910663, running) created by main thread at:
+    #0 pthread_create /rustc/llvm/src/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:1023:3 (nomicon+0x1541b) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 std::sys::pal::unix::thread::Thread::new::h6c88816c61b4c1fd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys/pal/unix/thread.rs:87:19 (nomicon+0xbdd91) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #2 std::thread::Builder::spawn_unchecked::h5dbd123bf8cc8360 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:456:32 (nomicon+0x98847) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #3 std::thread::Builder::spawn::he65861523e6c14d9 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:388:18 (nomicon+0x987ad) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 std::thread::spawn::h16c41bbe618a329e /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:697:20 (nomicon+0x987ad)
+    #5 nomicon::main::hd3e97f90376a6b7f /home/kevin/Motivate/data_race/nomicon/src/main.rs:12:5 (nomicon+0x9a3ce) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 core::ops::function::FnOnce::call_once::h77ad58e13445247a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9cb5e) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 std::sys_common::backtrace::__rust_begin_short_backtrace::hbab9bcc774be4474 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys_common/backtrace.rs:155:18 (nomicon+0x94c11) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #8 std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h7596f0c85e197226 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:159:18 (nomicon+0x9b0fe) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h4820802dafd94845 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:284:13 (nomicon+0xb6105) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 std::panicking::try::do_call::h3fce6c071ca0f5dd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #11 std::panicking::try::h390f3ffdd179ec2a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #12 std::panic::catch_unwind::hf8a28ad0dfa7600d /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #13 std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::h0a91432573760c91 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:48 (nomicon+0xb6105)
+    #14 std::panicking::try::do_call::h9adaab8f20fa7c09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #15 std::panicking::try::h7b7be5be4ba7198c /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #16 std::panic::catch_unwind::h44f9cbb768dc1a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #17 std::rt::lang_start_internal::hb6ce0964dafca588 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:20 (nomicon+0xb6105)
+    #18 main <null> (nomicon+0x9a619) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+
+SUMMARY: ThreadSanitizer: data race /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/alloc.rs:119:14 in alloc::alloc::dealloc::h01b24c671c5c9444
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=910592)
+  Write of size 8 at 0x720c00000000 by thread T1:
+    #0 free /rustc/llvm/src/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:725:3 (nomicon+0x1457f) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 alloc::alloc::dealloc::h01b24c671c5c9444 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/alloc.rs:119:14 (nomicon+0x9afd9) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #2 _$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$::deallocate::h271b93a389a60ec2 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/alloc.rs:256:22 (nomicon+0x9afd9)
+    #3 _$LT$$RF$A$u20$as$u20$core..alloc..Allocator$GT$::deallocate::h92ee559ef57f4a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/alloc/mod.rs:392:18 (nomicon+0x9a8da) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 _$LT$alloc..sync..Weak$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::h1da133262dcb8b27 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:3061:17 (nomicon+0x9f1fb) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #5 core::ptr::drop_in_place$LT$alloc..sync..Weak$LT$std..thread..Packet$LT$$LP$$RP$$GT$$C$$RF$alloc..alloc..Global$GT$$GT$::h6d8a832642a4a161 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9cd71) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 core::mem::drop::h2dd5323393785b62 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/mem/mod.rs:938:24 (nomicon+0x950b6) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 alloc::sync::Arc$LT$T$C$A$GT$::drop_slow::h2df56fdc372710db /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:1818:9 (nomicon+0x950b6)
+    #8 _$LT$alloc..sync..Arc$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::h724d1574dbd25bf6 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:2470:13 (nomicon+0x9e4f8) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 core::ptr::drop_in_place$LT$alloc..sync..Arc$LT$std..thread..Packet$LT$$LP$$RP$$GT$$GT$$GT$::hed4771d5ce231a80 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9dc51) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 core::mem::drop::h8d727815376e4e89 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/mem/mod.rs:938:24 (nomicon+0x99c79) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #11 std::thread::Builder::spawn_unchecked_::_$u7b$$u7b$closure$u7d$$u7d$::hcc13abd5b1107935 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:552:13 (nomicon+0x99c79)
+    #12 core::ops::function::FnOnce::call_once$u7b$$u7b$vtable.shim$u7d$$u7d$::hb3fb58a0746f0416 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9ca21) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #13 _$LT$alloc..boxed..Box$LT$F$C$A$GT$$u20$as$u20$core..ops..function..FnOnce$LT$Args$GT$$GT$::call_once::h05039e3fe13f09f8 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/boxed.rs:2022:9 (nomicon+0xbdf4a) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #14 _$LT$alloc..boxed..Box$LT$F$C$A$GT$$u20$as$u20$core..ops..function..FnOnce$LT$Args$GT$$GT$::call_once::h648dbe3bd9a6e325 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/boxed.rs:2022:9 (nomicon+0xbdf4a)
+    #15 std::sys::pal::unix::thread::Thread::new::thread_start::h0f2cf0460e125837 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys/pal/unix/thread.rs:108:17 (nomicon+0xbdf4a)
+
+  Previous atomic write of size 8 at 0x720c00000000 by main thread:
+    #0 core::sync::atomic::atomic_sub::h9df7830099a98fc4 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/sync/atomic.rs:3353:24 (nomicon+0x9e4d7) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 core::sync::atomic::AtomicUsize::fetch_sub::h8c245fff8dc1c824 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/sync/atomic.rs:2691:26 (nomicon+0x9e4d7)
+    #2 _$LT$alloc..sync..Arc$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::h724d1574dbd25bf6 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:2435:32 (nomicon+0x9e4d7)
+    #3 core::ptr::drop_in_place$LT$alloc..sync..Arc$LT$std..thread..Packet$LT$$LP$$RP$$GT$$GT$$GT$::hed4771d5ce231a80 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9dc51) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 core::ptr::drop_in_place$LT$std..thread..JoinInner$LT$$LP$$RP$$GT$$GT$::h865c712e89ef1ec7 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9d8ed) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #5 core::ptr::drop_in_place$LT$std..thread..JoinHandle$LT$$LP$$RP$$GT$$GT$::he1f1736b372a9987 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9d961) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 nomicon::main::hd3e97f90376a6b7f /home/kevin/Motivate/data_race/nomicon/src/main.rs:16:7 (nomicon+0x9a3dd) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 core::ops::function::FnOnce::call_once::h77ad58e13445247a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9cb5e) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #8 std::sys_common::backtrace::__rust_begin_short_backtrace::hbab9bcc774be4474 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys_common/backtrace.rs:155:18 (nomicon+0x94c11) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h7596f0c85e197226 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:159:18 (nomicon+0x9b0fe) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h4820802dafd94845 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:284:13 (nomicon+0xb6105) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #11 std::panicking::try::do_call::h3fce6c071ca0f5dd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #12 std::panicking::try::h390f3ffdd179ec2a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #13 std::panic::catch_unwind::hf8a28ad0dfa7600d /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #14 std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::h0a91432573760c91 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:48 (nomicon+0xb6105)
+    #15 std::panicking::try::do_call::h9adaab8f20fa7c09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #16 std::panicking::try::h7b7be5be4ba7198c /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #17 std::panic::catch_unwind::h44f9cbb768dc1a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #18 std::rt::lang_start_internal::hb6ce0964dafca588 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:20 (nomicon+0xb6105)
+    #19 main <null> (nomicon+0x9a619) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+
+  Thread T1 (tid=910663, running) created by main thread at:
+    #0 pthread_create /rustc/llvm/src/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:1023:3 (nomicon+0x1541b) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 std::sys::pal::unix::thread::Thread::new::h6c88816c61b4c1fd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys/pal/unix/thread.rs:87:19 (nomicon+0xbdd91) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #2 std::thread::Builder::spawn_unchecked::h5dbd123bf8cc8360 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:456:32 (nomicon+0x98847) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #3 std::thread::Builder::spawn::he65861523e6c14d9 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:388:18 (nomicon+0x987ad) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 std::thread::spawn::h16c41bbe618a329e /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:697:20 (nomicon+0x987ad)
+    #5 nomicon::main::hd3e97f90376a6b7f /home/kevin/Motivate/data_race/nomicon/src/main.rs:12:5 (nomicon+0x9a3ce) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 core::ops::function::FnOnce::call_once::h77ad58e13445247a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9cb5e) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 std::sys_common::backtrace::__rust_begin_short_backtrace::hbab9bcc774be4474 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys_common/backtrace.rs:155:18 (nomicon+0x94c11) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #8 std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h7596f0c85e197226 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:159:18 (nomicon+0x9b0fe) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h4820802dafd94845 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:284:13 (nomicon+0xb6105) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 std::panicking::try::do_call::h3fce6c071ca0f5dd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #11 std::panicking::try::h390f3ffdd179ec2a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #12 std::panic::catch_unwind::hf8a28ad0dfa7600d /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #13 std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::h0a91432573760c91 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:48 (nomicon+0xb6105)
+    #14 std::panicking::try::do_call::h9adaab8f20fa7c09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #15 std::panicking::try::h7b7be5be4ba7198c /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #16 std::panic::catch_unwind::h44f9cbb768dc1a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #17 std::rt::lang_start_internal::hb6ce0964dafca588 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:20 (nomicon+0xb6105)
+    #18 main <null> (nomicon+0x9a619) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+
+SUMMARY: ThreadSanitizer: data race /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/alloc.rs:119:14 in alloc::alloc::dealloc::h01b24c671c5c9444
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=910592)
+  Write of size 8 at 0x721000000080 by thread T1:
+    #0 free /rustc/llvm/src/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:725:3 (nomicon+0x1457f) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 __call_tls_dtors stdlib/cxa_thread_atexit_impl.c:156:7 (libc.so.6+0x44e6e) (BuildId: b20cbdb62d7717c13dc61a48b7b2e673a7edf233)
+
+  Previous atomic write of size 8 at 0x721000000080 by main thread:
+    #0 core::sync::atomic::atomic_sub::h9df7830099a98fc4 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/sync/atomic.rs:3353:24 (nomicon+0x9e417) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 core::sync::atomic::AtomicUsize::fetch_sub::h8c245fff8dc1c824 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/sync/atomic.rs:2691:26 (nomicon+0x9e417)
+    #2 _$LT$alloc..sync..Arc$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::h446ad3af4d5c9aa2 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/alloc/src/sync.rs:2435:32 (nomicon+0x9e417)
+    #3 core::ptr::drop_in_place$LT$alloc..sync..Arc$LT$std..thread..Inner$GT$$GT$::ha9a19fc5b716aec2 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9d9a1) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 core::ptr::drop_in_place$LT$core..pin..Pin$LT$alloc..sync..Arc$LT$std..thread..Inner$GT$$GT$$GT$::he6155b256ec181b6 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9dd51) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #5 core::ptr::drop_in_place$LT$std..thread..Thread$GT$::h093c56c917d0046f /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9d1e1) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 core::ptr::drop_in_place$LT$std..thread..JoinInner$LT$$LP$$RP$$GT$$GT$::h865c712e89ef1ec7 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9d8bd) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 core::ptr::drop_in_place$LT$std..thread..JoinHandle$LT$$LP$$RP$$GT$$GT$::he1f1736b372a9987 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ptr/mod.rs:514:1 (nomicon+0x9d961) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #8 nomicon::main::hd3e97f90376a6b7f /home/kevin/Motivate/data_race/nomicon/src/main.rs:16:7 (nomicon+0x9a3dd) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 core::ops::function::FnOnce::call_once::h77ad58e13445247a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9cb5e) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 std::sys_common::backtrace::__rust_begin_short_backtrace::hbab9bcc774be4474 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys_common/backtrace.rs:155:18 (nomicon+0x94c11) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #11 std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h7596f0c85e197226 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:159:18 (nomicon+0x9b0fe) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #12 core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h4820802dafd94845 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:284:13 (nomicon+0xb6105) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #13 std::panicking::try::do_call::h3fce6c071ca0f5dd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #14 std::panicking::try::h390f3ffdd179ec2a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #15 std::panic::catch_unwind::hf8a28ad0dfa7600d /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #16 std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::h0a91432573760c91 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:48 (nomicon+0xb6105)
+    #17 std::panicking::try::do_call::h9adaab8f20fa7c09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #18 std::panicking::try::h7b7be5be4ba7198c /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #19 std::panic::catch_unwind::h44f9cbb768dc1a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #20 std::rt::lang_start_internal::hb6ce0964dafca588 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:20 (nomicon+0xb6105)
+    #21 main <null> (nomicon+0x9a619) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+
+  Thread T1 (tid=910663, running) created by main thread at:
+    #0 pthread_create /rustc/llvm/src/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:1023:3 (nomicon+0x1541b) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #1 std::sys::pal::unix::thread::Thread::new::h6c88816c61b4c1fd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys/pal/unix/thread.rs:87:19 (nomicon+0xbdd91) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #2 std::thread::Builder::spawn_unchecked::h5dbd123bf8cc8360 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:456:32 (nomicon+0x98847) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #3 std::thread::Builder::spawn::he65861523e6c14d9 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:388:18 (nomicon+0x987ad) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #4 std::thread::spawn::h16c41bbe618a329e /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/thread/mod.rs:697:20 (nomicon+0x987ad)
+    #5 nomicon::main::hd3e97f90376a6b7f /home/kevin/Motivate/data_race/nomicon/src/main.rs:12:5 (nomicon+0x9a3ce) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #6 core::ops::function::FnOnce::call_once::h77ad58e13445247a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:250:5 (nomicon+0x9cb5e) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #7 std::sys_common::backtrace::__rust_begin_short_backtrace::hbab9bcc774be4474 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/sys_common/backtrace.rs:155:18 (nomicon+0x94c11) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #8 std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h7596f0c85e197226 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:159:18 (nomicon+0x9b0fe) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #9 core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h4820802dafd94845 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/core/src/ops/function.rs:284:13 (nomicon+0xb6105) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+    #10 std::panicking::try::do_call::h3fce6c071ca0f5dd /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #11 std::panicking::try::h390f3ffdd179ec2a /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #12 std::panic::catch_unwind::hf8a28ad0dfa7600d /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #13 std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::h0a91432573760c91 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:48 (nomicon+0xb6105)
+    #14 std::panicking::try::do_call::h9adaab8f20fa7c09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:559:40 (nomicon+0xb6105)
+    #15 std::panicking::try::h7b7be5be4ba7198c /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panicking.rs:523:19 (nomicon+0xb6105)
+    #16 std::panic::catch_unwind::h44f9cbb768dc1a09 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/panic.rs:149:14 (nomicon+0xb6105)
+    #17 std::rt::lang_start_internal::hb6ce0964dafca588 /rustc/fb898629a26e4acec59c928ce3ec00a62675d1cc/library/std/src/rt.rs:141:20 (nomicon+0xb6105)
+    #18 main <null> (nomicon+0x9a619) (BuildId: 2de223c425050e564e748ef964186f3009b99e08)
+
+SUMMARY: ThreadSanitizer: data race stdlib/cxa_thread_atexit_impl.c:156:7 in __call_tls_dtors
+==================
+ThreadSanitizer: reported 3 warnings
